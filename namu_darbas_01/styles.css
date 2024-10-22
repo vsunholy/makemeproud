@@ -1,0 +1,48 @@
+
+
+body {
+  background-image: url(https://images.pexels.com/photos/2824173/pexels-photo-2824173.jpeg);
+  font-family: "Afacad Flux", sans-serif;
+  margin: 0;
+  }
+
+.naw{
+    font-weight: bold;
+    font-family: "Afacad Flux", sans-serif;
+}
+hr{
+ border: 3px solid rgb(54, 56, 54);
+ border-radius: 2px;
+ margin-top: 320px;
+}
+.hd{
+    background-image: url(https://img.freepik.com/free-vector/modern-flowing-blue-wave-banner-white-background_1035-18538.jpg);
+    opacity: 0.75;
+    width: 33%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.center-container {
+  width: 100%;
+  margin-top: 150px;
+ 
+}
+.container {
+  font-size: 0;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.box-2 {
+  height: 130px;
+  width: 33.3333%;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: aliceblue;
+  opacity: 0.6;
+  
+}
+#ituz {
+  margin-left: 333px;
+}

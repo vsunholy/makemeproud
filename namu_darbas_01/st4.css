@@ -1,0 +1,57 @@
+:root {
+  --blue: #1e90ff;
+  --container-width: 1200px;
+  --trans: all 0.4s;
+  --rabit-color: yellow;
+}
+
+body {
+  margin: 0;
+  font-family: "Afacad Flux", sans-serif;
+}
+header {
+  /* background-color:var(--blue); */
+  padding: 30px 20px
+}
+header nav {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  position: relative;
+ 
+}
+header nav svg {
+  width: 250px;
+  position:absolute;
+  top: -50px;
+  left: -200px;
+  color: var(--rabit-color);
+
+}
+header nav a {
+color: white;
+text-decoration: none;
+margin-right: 20px;
+font-size: 30px;
+transition: var(--trans);
+position:relative;
+left: -325px;
+}
+
+header nav a:hover {
+  color: var(--rabit-color);
+}
+body {
+  background-image: url(https://images.pexels.com/photos/2824173/pexels-photo-2824173.jpeg);
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: bold;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: crimson;
+margin:0;
+}
+  hr{
+      border: 3px solid rgb(54, 56, 54);
+      border-radius: 2px;
+      margin-top: 325px;
+  }
+ 

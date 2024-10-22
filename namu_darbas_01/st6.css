@@ -1,0 +1,13 @@
+body {
+    background-image: url(https://images.pexels.com/photos/2824173/pexels-photo-2824173.jpeg);
+    font-family: "Afacad Flux", sans-serif;
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: crimson;
+    margin:0;
+}
+    hr{
+        border: 3px solid rgb(54, 56, 54);
+        border-radius: 2px;
+       margin-top: 150px;
+    }

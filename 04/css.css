@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+.title {
+    color: skyblue;
+    font-size: 84px;
+    font-weight: 200;
+    font-family: "Oswald", sans-serif;
+}
+
+.title-02 {
+    color: crimson;
+}
+.box-1 {
+    border: 8px solid skyblue;
+    height: 100px;
+    width: 200px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 50px
+}
+.center-container {
+    width: 100%;
+   
+}
+.container {
+    font-size: 0;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.box-2 {
+    border: 8px solid rgb(172, 11, 11);
+    height: 100px;
+    width: 33.3333%;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 30px;
+}
