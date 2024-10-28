@@ -1,0 +1,13 @@
+$font :"Josefin Sans", sans-serif;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font;;
+    margin: 0;
+}
