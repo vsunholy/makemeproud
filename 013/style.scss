@@ -1,0 +1,14 @@
+#nr1{
+    transition: all 1s;
+    opacity: 1;
+    cursor: pointer;
+}
+
+#nr2 {
+    display: flex;
+    flex-wrap: wrap;
+    div{
+        transition: all 0.5s;
+    }
+
+}

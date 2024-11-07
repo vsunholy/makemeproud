@@ -1,13 +1,161 @@
-$font :"Josefin Sans", sans-serif;
+$font :"Josefin Sans",
+sans-serif;
 $xl: 1200px;
 $lg: 992px;
 $md: 768px;
 $sm: 576px;
-*{
+$xs: 375px;
+
+$blue: #003049;
+$red: #D62828;
+$bg: #BEE3DB;
+$yellow: #F5B700;
+$black: #220901;
+$white: #FFFFFF;
+
+
+* {
     box-sizing: border-box;
 }
 
 body {
-    font-family: $font;;
+    font-family: $font;
+    ;
     margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: $xl;
+        background-color: $bg;
+        padding: 0 20px;
+        height: 80px;
+        nav{
+            padding: 10px;
+            ul{
+                display: flex;
+                column-gap: 30px;
+                li{
+                    a{
+                        color: $blue;
+                        font-size: 30px;
+                        text-decoration: none;
+                        font-weight: 200;
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+                        border-bottom: 1px solid transparent;
+                        transition: all 0.3s ease;
+                        &:hover {
+                            color: $red;
+                            text-decoration: underline;
+                            
+                        }
+                    }
+                }
+
+            }
+        }
+        .cart {
+            position: relative;
+            svg {
+                width: 40px;
+                height: 40px;
+            }
+            .list {
+                position: absolute;
+                top: 50px;
+                right: -20px;
+                background-color: $white;
+                border: 3px solid $bg;
+                padding: 10px;
+                z-index: 1;
+                ul {
+                    width: 320px;
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                        }
+                        .info {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 5px;
+                            h3 {
+                                font-size: 20px;
+                                color: $blue;
+                            }
+                            p {
+                                font-size: 15px;
+                                color: $black;
+                            }
+                        }
+                        button {
+                            background-color: $bg;
+                            height: 30px;
+                            color: $white;
+                            border: none;
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            &:hover {
+                                background-color: $black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.hero {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: $xl;
+        padding: 50px 20px;
+        .hero-products {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap: wrap;
+            .product {
+                flex: 1;
+                min-width: 300px;
+                max-width: 400px;
+              
+                img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                }
+            }
+        }
+ 
+    }
 }
