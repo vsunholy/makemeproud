@@ -1,0 +1,1 @@
+bmi = weight / (height * height)
