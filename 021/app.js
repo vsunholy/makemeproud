@@ -1,10 +1,12 @@
 class TV {
     static programos = ['TV3', 'LRT', 'TV6', 'TV1', 'Animal planet'];
 
-    static zinute;
+    static zinute = 'niekas dar nera pasakes'
+    
+    static pats  = this;
 
     static rasytiZinute(zinute) {
-        this.zinute = zinute;
+        this.pats.zinute = zinute;
     }
 
     static pridetiPrograma(programa) {
@@ -24,7 +26,7 @@ class TV {
         this.constructor.rasytiZinute(zinute);
     }
     skaitytiZinute() {
-        console.log(this.constructor.zinute);
+        console.log(this.constructor.pats.zinute);
 
     }
     pakeistiKanala(kanalas) {
