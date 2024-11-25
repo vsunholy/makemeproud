@@ -157,8 +157,3 @@ console.log(cart, cart2);
 
 
 
-
-
-
-
-
