@@ -32,24 +32,25 @@ fetch('https://in3.dev/inv/')
         items.forEach(item => {
             const totalPrice = item.quantity * item.price;
 
-            // Calculate discount if any
-            let discountValue = 0; // Default no discount
-            let discountText = "No discount";
+            // Initialize discount variables
+            let discountValue = 0; // Total discount amount
+            let discountText = "No discount"; // Default text
 
+            // Check if there are discounts available
             if (item.discount && item.discount.length > 0) {
                 item.discount.forEach(discount => {
                     if (discount.type === "fixed") {
-                        discountValue += discount.value; // Fixed discount
+                        discountValue += discount.value; // Fixed discount amount
                         discountText = `-${discount.value.toFixed(2)} €`;
                     } else if (discount.type === "percentage") {
                         const percentageDiscount = (totalPrice * (discount.value / 100));
-                        discountValue += percentageDiscount; // Percentage discount
+                        discountValue += percentageDiscount; // Percentage discount amount
                         discountText = `-${discount.value}% (${percentageDiscount.toFixed(2)} €)`;
                     }
                 });
             }
 
-            const finalPrice = totalPrice - discountValue; // Apply discount to total price
+            const finalPrice = totalPrice - discountValue; // Apply total discounts
 
             subtotal += finalPrice;
 
@@ -71,4 +72,4 @@ fetch('https://in3.dev/inv/')
         document.getElementById('tax').innerText = tax.toFixed(2);
         document.getElementById('total').innerText = total.toFixed(2);
     })
-    .catch(error => console.error('Error fetching invoice data:', error));
+    
