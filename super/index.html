@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVM Sąskaita Faktūra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>PVM SĄSKAITA FAKTŪRA</h1>
+<div id="invoice-details"></div>
+
+<h2>Pirkėjas</h2>
+<div id="buyer-details"></div>
+
+<h2>Pardavėjas</h2>
+<div id="seller-details"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Prekės aprašymas</th>
+            <th>Kiekis</th>
+            <th>Kaina (€)</th>
+            <th>Nuolaida (€)</th>
+            <th>Suma (€)</th>
+        </tr>
+    </thead>
+    <tbody id="items"></tbody>
+</table>
+
+<p><strong>Transportavimo išlaidos:</strong> €<span id="shippingPrice"></span></p>
+
+<p class="total">Tarifinė suma: €<span id="subtotal"></span></p>
+<p class="total">PVM (21%): €<span id="tax"></span></p>
+<p class="total">Galutinė suma su PVM: €<span id="total"></span></p>
+
+<script src="script.js"></script>
+
+</body>
+</html>
