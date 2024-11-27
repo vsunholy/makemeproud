@@ -1,0 +1,126 @@
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
+  font-family: "Tahoma";
+}
+
+.invoice-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 20px 30px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.invoice-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invoice-header h1 {
+  font-size: 24px;
+  color: #007BFF;
+  margin-bottom: 5px;
+}
+
+.invoice-info p {
+  margin: 5px 0;
+}
+
+.parties-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.parties-info div {
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.seller-info h3, .buyer-info h3 {
+  color: #007BFF;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+table td {
+  border: 1px solid #e9ecef;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.summary-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 18px;
+  color: #007BFF;
+}
+
+.print-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.print-button:hover {
+  background-color: #0056b3;
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .invoice-container {
+    box-shadow: none;
+    border: none;
+  }
+  .print-button {
+    display: none;
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PVM SĄSKAITA FAKTŪRA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="invoice-container">
+    <header class="invoice-header">
+      <h1>PVM SĄSKAITA FAKTŪRA</h1>
+      <div class="invoice-info">
+        <p><strong>Sąskaitos numeris:</strong> <span id="invoice-number"></span></p>
+        <p><strong>Sąskaitos data:</strong> <span id="invoice-date"></span></p>
+        <p><strong>Mokėjimo terminas:</strong> <span id="due-date"></span></p>
+      </div>
+    </header>
+    <section class="parties-info">
+      <div class="seller-info">
+        <h3>Pardavėjas:</h3>
+        <p id="seller"></p>
+      </div>
+      <div class="buyer-info">
+        <h3>Pirkėjas:</h3>
+        <p id="buyer"></p>
+      </div>
+    </section>
+    <section class="items-section">
+      <table>
+        <thead>
+          <tr>
+            <th>Prekės pavadinimas</th>
+            <th>Kiekis</th>
+            <th>Kaina</th>
+            <th>Nuolaida</th>
+            <th>Suma</th>
+          </tr>
+        </thead>
+        <tbody id="items-list"></tbody>
+      </table>
+    </section>
+    <section class="summary-section">
+      <div class="summary-row">
+        <span>Tarpinė suma:</span>
+        <span id="subtotal"></span>
+      </div>
+      <div class="summary-row">
+        <span>Transportavimo išlaidos:</span>
+        <span id="shipping"></span>
+      </div>
+      <div class="summary-row">
+        <span>PVM (21%):</span>
+        <span id="vat"></span>
+      </div>
+      <div class="summary-row total">
+        <span>Galutinė suma:</span>
+        <span id="total"></span>
+      </div>
+    </section>
+    <button class="print-button" onclick="window.print()">Print Invoice</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
