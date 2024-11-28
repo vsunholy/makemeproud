@@ -39,6 +39,16 @@ app.get('/briedis/:color/:size', (req, res) => {
   }
   res.json(data)
 });
+app.get('/briedis1', (req, res) => {
+
+  const { color='000000', size = '20' } = req.query;
+  
+  const data = { 
+    spalva:color,
+    dydis: size
+  }
+  res.json(data)
+});
 
 app.get('/bebras', (req, res) => {
   const { color, size } = req.query;
