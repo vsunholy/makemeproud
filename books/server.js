@@ -7,7 +7,7 @@ const { type } = require('node:os');
 const app = express();
 const port = 80;
 
-const domain = 'http://books.final';
+const domain = 'http://books.final/';
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -150,4 +150,4 @@ app.post('/update/:id', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Knygynas darbui pasiruošęs ant ${port} porto!`);
-});                                     
+});
