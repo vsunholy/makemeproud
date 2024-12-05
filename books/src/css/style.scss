@@ -1,11 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-@import 'form';
+@import 'list';
 body{
     background-image: radial-gradient(circle, #ed6ea0 10%, #ec8c69 90%);
 }
 
 div.card-body{
     background-image: linear-gradient(to bottom, #7950f2 5%, #4dabf7 95%)
+}
+nav {
+    background-color: burlywood;
 }
