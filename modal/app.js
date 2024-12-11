@@ -7,6 +7,7 @@ const modalContent = document.querySelector('.modalContent')
 btn.addEventListener('click', openModal)
 close.addEventListener('click', closeModal)
 
+
 function openModal() {
     modal.style.display = 'block'
 }
