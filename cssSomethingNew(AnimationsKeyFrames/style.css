@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.disco {
+    background-image: url(./images/5234906.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: yellowgreen;
+    animation: danceFloor 2.5s ease-in-out infinite alternate;
+
+}
+
+@keyframes danceFloor {
+    0% {
+        background-color: yellowgreen;
+    }
+
+    25% {
+        background-color: blueviolet;
+    }
+
+    50% {
+        background-color: darkorange;
+    }
+
+    75% {
+        background-color: deepskyblue;
+    }
+
+    100% {
+        background-color: palevioletred;
+    }
+}
+
+
+.movingBackground {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);    
+    background-size: 200%;
+    animation: backgroundChange 2s infinite alternate;
+   
+
+}
+
+@keyframes backgroundChange {
+    0% {
+        background-position: 0% 100%;
+    }
+    50% {
+        background-position:100% 200%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+.penguin {
+    background-image: url(./images/img_20190609_140908_burst003.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+}
+
+.penguin img {
+    width: 10%;
+    animation: cold 1ms infinite alternate;
+    animation-delay: 5s;
+}
+
+@keyframes cold {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.car {
+    background-image: url(./images/horizontal-view-of-asphalt-road-in-thailand-background-empty-land-and-side-eucalyptus-forest-under-the-blue-sky-free-photo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    min-height: 100vh;
+}
+.car img{
+    width: 600px;
+    position: absolute;
+    bottom: 60px;
+    animation: carMove 3s infinite;
+    
+
+}
+
+@keyframes carMove {
+    from {
+        transform: translate(-1000px);
+    }
+    to {
+        transform: translate(2000px);
+    }
+
+}
