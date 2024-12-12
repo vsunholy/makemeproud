@@ -11991,3 +11991,12 @@ body {
 nav {
   background-color: #97b7d7;
 }
+
+.card-body form.sort {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 40px 0;
+}
+.card-body form.sort select {
+  width: 300px;
+}

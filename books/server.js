@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const handlebars = require('handlebars');
+const multer = require('multer');
 const fs = require('node:fs');
 const { v4: uuidv4 } = require('uuid');
 const app = express();
@@ -11,6 +12,26 @@ const port = 80;
 handlebars.registerHelper('isdefined', function (value) {
   return value !== undefined;
 });
+handlebars.registerHelper('eq', function (a, b) {
+  return a === b;
+});
+
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/images/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage });
+
+
+
+
+
 const domain = 'http://books.final/';
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -102,9 +123,34 @@ app.use(oldDataManager);
 //* ROUTES
 
 app.get('/', (req, res) => {
-
+  // sort
+  let sortBy;
   let books = fs.readFileSync('./data/books.json', 'utf8');
   books = JSON.parse(books);
+  switch (req.query?.sort) {
+    case 'title_az':
+      sortBy = 'title_az';
+      books = books.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case 'title_za':
+      sortBy = 'title_za';
+      books = books.sort((a, b) => b.title.localeCompare(a.title));
+      break;
+    case 'author_az':
+      sortBy = 'author_az';
+      books = books.sort((a, b) => a.author.localeCompare(b.author));
+      break;
+    case 'author_za':
+      sortBy = 'author_za';
+      books = books.sort((a, b) => b.author.localeCompare(a.author));
+      break;
+    default:
+      sortBy = 'default';
+  }
+
+
+
+
 
   const file = top + fs.readFileSync('./html/read.html', 'utf8') + bottom;
   const template = handlebars.compile(file);
@@ -112,8 +158,11 @@ app.get('/', (req, res) => {
     pageTitle: 'Knygų sąrašas',
     domain,
     books,
-    message: getMessages(req)
+    message: getMessages(req),
+    sortBy: { [sortBy]: true }
+
   };
+
   const html = template(data);
   res.send(html);
 
@@ -204,7 +253,7 @@ app.get('/show/:id', (req, res) => {
   const html = template(data);
   res.send(html);
 });
-app.post('/store', (req, res) => {
+app.post('/store', upload.single('cover'), (req, res) => {
   const { title, author, year, genre, isbn, pages } = req.body;
   const id = uuidv4();
   addToSession(req, 'oldData', req.body);
