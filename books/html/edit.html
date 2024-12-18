@@ -60,23 +60,8 @@
                                     </label>
                                     <button type="submit" class="btn btn-outline-primary">Issaugoti</button>
                                     <a href="{{domain}}" class="btn btn-outline-secondary">Atšaukti</a>
-                                    <h1>Send POST Request via JavaScript</h1>
-                                    <button onclick="sendPost()">Send POST Request</button>
                                   
-                                    <script>
-                                      function sendPost() {
-                                        fetch('http://books.final/update/invalid-id', {
-                                          method: 'POST',
-                                          headers: {
-                                            'Content-Type': 'application/json'
-                                          },
-                                          body: JSON.stringify({ title: 'New Title' }) // Example body data
-                                        })
-                                        .then(response => response.text())
-                                        .then(data => console.log('Server Response:', data))
-                                        .catch(error => console.error('Error:', error));
-                                      }
-                                    </script>
+                                  
                                 </div>
                             </div>
                         </div>
