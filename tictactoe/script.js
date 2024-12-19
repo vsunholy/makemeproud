@@ -85,4 +85,5 @@ newGame.addEventListener('click', () => {
     step = '';
     who();
     whoGo.innerText = step === 'cross' ? 'Kryziukai' : 'Nuliukai';
+    whoWin.innerText = ``;
 });
