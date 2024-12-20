@@ -46,8 +46,8 @@ body {
 }
 
 .cell {
-    width: 22%;
-    height: 22%;
+    width: 25%;
+    height: 25%;
     border: 2px solid black;
     color: black;
     border-radius: 5px;
