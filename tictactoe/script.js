@@ -62,7 +62,7 @@ const checkWin = () => {
             cell[c].classList.add('winColor');
 
             winner = step;
-            whoWin.innerText = `${winner === 'cross' ? 'Kryziukai' : 'Nuliukai'} laimėjo!`;
+            whoWin.innerText = `${winner === 'cross' ? 'Kryziukai' : 'Nuliukai'}`;
             whoGo.innerText = '';
             bla.style.opacity = 0;
             return;
