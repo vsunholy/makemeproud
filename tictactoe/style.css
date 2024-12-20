@@ -9,6 +9,13 @@ body {
     font-family: "Josefin Sans", serif;
 }
 
+h1 {
+    background-color: #00DBDE;
+    background-image: linear-gradient(20deg, #00DBDE 0%, #FC00FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .screen {
     display: flex;
     justify-content: center;
@@ -27,7 +34,12 @@ body {
 
 .info {
     margin-top: 25px;
-    font-weight: 600;
+    font-weight: 700;
+    background-color: #00DBDE;
+    background-image: linear-gradient(20deg, #00DBDE 0%, #FC00FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
 
 .board {
@@ -43,6 +55,7 @@ body {
     justify-content: space-evenly;
     gap: 5%;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .cell {
@@ -57,7 +70,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-   
+    background-color: #84d7d8;
+  
+
+
 }
 
 
@@ -87,8 +103,10 @@ body {
 }
 
 .cell:hover {
-    background-color: #74EBD5;
-    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+    background-color: #00DBDE;
+    background-image: linear-gradient(10deg, #00DBDE 10%, #FC00FF 90%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
 }
 
 .new {
@@ -98,18 +116,27 @@ body {
     border-radius: 5px;
     font-weight: 700;
     margin-top: 20px;
-    
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
 }
 
 .new:hover {
     background-color: lightseagreen;
 }
+
 .winColor {
     background-color: #85FFBD;
-    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);    
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
     font-size: 100px;
     font-weight: 900;
     color: blueviolet;
+}
+.win {
+    background-color: #00DBDE;
+    background-image: linear-gradient(20deg, #00DBDE 0%, #FC00FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
 }
 
 .cube {
@@ -147,6 +174,7 @@ body {
     top: 30%;
     animation-duration: 5s;
 }
+
 .cube:nth-child(6) {
     left: 74%;
     top: 80%;
@@ -164,4 +192,3 @@ body {
         opacity: 0;
     }
 }
-
