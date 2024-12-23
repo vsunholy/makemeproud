@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
+}
+
+#app {
+    display: flex;
+    width: 100%;
+    column-gap: 20px;
+}
+
+#app section {
+    border: 1px solid skyblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #5e44d4;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+section#read {
+    margin-left: 10px;
+    margin-top: 10px;
+
+    ul {
+        list-style: none;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+            span {
+                display: inline-block;
+                font-size: 20px;
+            }
+
+            span.tree-id {
+                color: #3b7dc9;
+                font-weight: bold;
+                width: 50px;
+            }
+
+            span.tree-name {
+                color: #5e44d4;
+                width: 120px;
+
+            }
+
+            span.tree-height {
+                color: #f0a500;
+                font-style: italic;
+                width: 80px;
+            }
+
+            span.tree-type {
+                color: crimson;
+                width: 100px;
+            }
+        }
+    }
+}
