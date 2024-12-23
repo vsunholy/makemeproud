@@ -71,7 +71,6 @@ const checkWin = () => {
 
 
     if ([...cell].every(item => item.classList.contains('circle') || item.classList.contains('cross'))) {
-        whoGo.innerText = 'Lygiosios!';
         whoWin.innerText = 'Lygiosios!';
         winner = 'draw';
         bla.style.opacity = 0;
