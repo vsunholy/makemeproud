@@ -61,3 +61,41 @@ section#read ul li span.tree-type {
   color: crimson;
   width: 100px;
 }
+
+section#create,
+section#delete,
+section#edit {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+section#create > div,
+section#delete > div,
+section#edit > div {
+  display: flex;
+  flex-direction: column;
+}
+section#create > div input,
+section#create > div select,
+section#delete > div input,
+section#delete > div select,
+section#edit > div input,
+section#edit > div select {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+section#create > div label,
+section#delete > div label,
+section#edit > div label {
+  margin-bottom: 5px;
+}
+section#create button,
+section#delete button,
+section#edit button {
+  padding: 5px;
+  background-color: darkgoldenrod;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

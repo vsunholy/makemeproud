@@ -68,3 +68,35 @@ section#read {
         }
     }
 }
+
+section#create,
+section#delete,
+section#edit {
+    margin-left: 10px;
+    margin-top: 10px;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+
+        input,
+        select {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+    }
+
+    button {
+        padding: 5px;
+        background-color: darkgoldenrod;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+}
