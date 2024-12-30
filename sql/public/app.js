@@ -30,9 +30,9 @@ var read = function read() {
   });
 };
 var create = function create(_) {
-  var name = document.querySelector('[data-name]').value;
-  var height = document.querySelector('[data-height]').value;
-  var type = document.querySelector('[data-type]').value;
+  var name = document.querySelector('#create [data-name]').value;
+  var height = document.querySelector('#create [data-height]').value;
+  var type = document.querySelector('#create [data-type]').value;
   axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('http://localhost:6457/create', {
     name: name,
     height: height,

@@ -23,9 +23,9 @@ const read = () => {
     )
 };
 const create = _ => {
-  const name = document.querySelector('[data-name]').value;
-  const height = document.querySelector('[data-height]').value;
-  const type = document.querySelector('[data-type]').value;
+  const name = document.querySelector('#create [data-name]').value;
+  const height = document.querySelector('#create [data-height]').value;
+  const type = document.querySelector('#create [data-type]').value;
 
   axios.post('http://localhost:6457/create', { name, height, type })
     .then(res => {
@@ -36,29 +36,29 @@ const create = _ => {
 };
 
 const destroy = _ => {
- 
+
   const id = document.querySelector('#delete [data-id]').value;
 
   axios.delete('http://localhost:6457/delete/' + id)
-      .then(res => {
-          console.log(res.data);
-          read();
-      });
- 
+    .then(res => {
+      console.log(res.data);
+      read();
+    });
+
 };
 
 const edit = _ => {
-   
+
   const id = document.querySelector('#edit [data-id]').value;
   const height = parseFloat(document.querySelector('#edit [data-water]').value);
   const name = document.querySelector('#edit [data-name]').value;
 
   axios.put('http://localhost:6457/update/' + id, { height, name })
-      .then(res => {
-          console.log(res.data);
-          read();
-      });
- 
+    .then(res => {
+      console.log(res.data);
+      read();
+    });
+
 }
 
 read();
