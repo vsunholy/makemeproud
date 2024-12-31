@@ -1,60 +1,68 @@
 let slideIndex = 0;
 
-const slides = document.querySelectorAll('.card');
-const dots = document.querySelectorAll('.dot');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
+const slides = document.querySelectorAll('.card'); // Select all testimonial cards
+const dots = document.querySelectorAll('.dot'); // Select all navigation dots
+const prev = document.querySelector('.prev'); // Select the previous button
+const next = document.querySelector('.next'); // Select the next button
 
-// Initialize the first slide and dot
-if (slides.length > 0) {
-    slides[slideIndex].classList.add('active');
-    dots[slideIndex].style.opacity = '1';
+function updateSlides() {
+    // Reset all slides and dots
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active'); // Remove active class from all slides
+        dots[i].style.opacity = '0.3'; // Dim all dots
+    });
+
+    // Activate current slide and dot
+    slides[slideIndex].classList.add('active'); // Add active class to current slide
+    dots[slideIndex].style.opacity = '1'; // Highlight current dot
 }
 
-function showSlides(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        dots[i].style.opacity = '0.3'; // Reset all dots opacity
-    });
-    slides[index].classList.add('active');
-    dots[index].style.opacity = '1'; // Highlight active dot
-    
+function showSlide(index) {
+    slideIndex = (index + slides.length) % slides.length; // Ensure index wraps around
+    updateSlides(); // Update the displayed slide and dot
+}
+
+// Initialize the first slide and dot if slides exist
+if (slides.length > 0) {
+    updateSlides();
 }
 
 // Automatic slideshow
-setInterval(function () {
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;
-    }
-    showSlides(slideIndex);
-    slideIndex++;
+let autoSlideInterval = setInterval(() => {
+    showSlide(slideIndex + 1); // Increment index for next slide
 }, 3000);
 
-// Add event listeners to dots
-dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-        showSlides(i);
-        slideIndex = i; // Update the global index
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval); // Stop auto-sliding on manual interaction
+    autoSlideInterval = setInterval(() => {
+        showSlide(slideIndex + 1); // Restart auto-sliding
+    }, 3000);
+}
+
+// Add event listeners to dots for manual navigation
+if (dots.length > 0) {
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            clearInterval(autoSlideInterval); // Clear interval before interaction
+            showSlide(i); // Show the clicked dot's slide
+            resetAutoSlide(); // Restart auto-sliding after interaction
+        });
     });
-});
+}
 
-//add event listeners to arrows
+// Add event listeners to arrows for manual navigation
+if (prev && next) {
+    prev.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        clearInterval(autoSlideInterval); // Clear interval before interaction
+        showSlide(slideIndex - 1); // Decrement index for previous slide
+        resetAutoSlide(); // Restart auto-sliding after interaction
+    });
 
-
-prev.addEventListener('click', () => {
-    slideIndex--;
-    if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
-    }
-    showSlides(slideIndex);
-});
-
-next.addEventListener('click', () => {
-    slideIndex++;
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;             
-    }
-    showSlides(slideIndex);
-   
-});     
-
+    next.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        clearInterval(autoSlideInterval); // Clear interval before interaction
+        showSlide(slideIndex + 1); // Increment index for next slide
+        resetAutoSlide(); // Restart auto-sliding after interaction
+    });
+}
