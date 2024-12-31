@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,98 +6,159 @@
     font-family: 'Tahoma', sans-serif;
 }
 
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
 #app {
     display: flex;
     width: 100%;
     column-gap: 20px;
+    align-items: flex-start;
 }
 
 #app section {
-    border: 1px solid skyblue;
-    padding: 10px;
-    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #5e44d4;
-    margin-bottom: 10px;
+    color: #4a4aef;
+    margin-bottom: 15px;
     text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-section#read {
-    margin-left: 10px;
-    margin-top: 10px;
-
-    ul {
-        list-style: none;
-
-        li {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-
-            span {
-                display: inline-block;
-                font-size: 20px;
-            }
-
-            span.tree-id {
-                color: #3b7dc9;
-                font-weight: bold;
-                width: 50px;
-            }
-
-            span.tree-name {
-                color: #5e44d4;
-                width: 120px;
-
-            }
-
-            span.tree-height {
-                color: #f0a500;
-                font-style: italic;
-                width: 80px;
-            }
-
-            span.tree-type {
-                color: crimson;
-                width: 100px;
-            }
-        }
-    }
-}
-
+/* Section Margins */
+section#read,
+section#clients,
+section#phones,
+section#full,
 section#create,
 section#delete,
 section#edit {
     margin-left: 10px;
     margin-top: 10px;
+}
 
-    &>div {
-        display: flex;
-        flex-direction: column;
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
 
-        input,
-        select {
-            margin-bottom: 10px;
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s; /* Added transition for background color */
+}
 
-        label {
-            margin-bottom: 5px;
-        }
-    }
+/* Hover Effect */
+ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    button {
-        padding: 5px;
-        background-color: darkgoldenrod;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
+/* Text Styles */
+li span {
+    display: inline-block;
+    font-size: 1rem; 
+}
+
+/* ID Styles */
+span.tree-id {
+    color: #3b7dc9; /* Blue for IDs */
+    font-weight: bold; 
+    width: 60px; 
+    text-align: center; 
+}
+
+/* Name Styles */
+span.tree-name {
+    color: #4a4aef; /* Purple for names */
+    font-weight: bold; /* Make names bold */
+    width: 140px; 
+}
+
+/* Height Styles */
+span.tree-height {
+    color: #f0a500; /* Gold for height */
+    font-style: italic; 
+}
+
+/* Type Styles */
+span.tree-type {
+    color: crimson; /* Red for type */
+}
+
+/* Input and Button Styles */
+input,
+select {
+    padding: 10px; 
+    border-radius: 6px; 
+    border: 1px solid #ccc; 
+}
+
+input:hover,
+select:hover {
+   border-color:#4a4aef; /* Change border color on hover */
+}
+
+input::placeholder,
+select option {
+   color:#888; /* Placeholder color */
+}
+
+button {
+   padding: 10px 15px; 
+   background-color:#f0a500; 
+   color:#ffffff; 
+   border:none; 
+   border-radius:6px; 
+   cursor:pointer; 
+   transition:bg-color .2s, transform .2s ease-in-out; /* Added transition for transform */
+}
+
+button:hover {
+   background-color:#e08d00; 
+}
+
+button.active { /* Active button state with different style */
+   background-color:#c97700; 
+   transform: translateY(2px); /* Button push effect on active state */
+}
+
+/* Responsive Behavior */
+@media (max-width:768px) {
+   #app { 
+      flex-direction:column; 
+      row-gap:20px; 
+   }
+
+   ul li { 
+      flex-direction:column; 
+      align-items:flex-start; 
+      gap:5px; 
+   }
+
+   span { 
+      width:auto; 
+      text-align:left; 
+   }
+
+   button { 
+      width:100%; 
+   }
 }

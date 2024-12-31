@@ -45,8 +45,53 @@ app.get('/read', (req, res) => {
 
 });
 
+app.get('/read-clients', (req, res) => {
+    const sql = `
+        SELECT *
+        FROM clients
+    `;
+    con.query(sql, (err, data) => {
+        if (err) {
+            res.send('Klaida gaunant duomenis');
+            return;
+        }
+        res.json(data);
+    });
+
+});
+app.get('/read-phones', (req, res) => {
+    const sql = `
+        SELECT *
+        FROM phones
+    `;
+    con.query(sql, (err, data) => {
+        if (err) {
+            res.send('Klaida gaunant duomenis');
+            return;
+        }
+        res.json(data);
+    });
+
+});
+app.get('/read-full', (req, res) => {
+    const sql = `
+        SELECT c.id, name, p.id AS phone_id, client_id, number
+        FROM clients AS c
+        INNER JOIN phones AS p
+        ON c.id = p.client_id
+`;
+    con.query(sql, (err, data) => {
+        if (err) {
+            res.send('Klaida gaunant duomenis');
+            return;
+        }
+        res.json(data);
+    });
+});
+
+
 app.post('/create', (req, res) => {
-  // secure create
+    // secure create
     const sql = `
         INSERT INTO trees (name, height, type)
         VALUES (?, ?, ?)
@@ -63,35 +108,35 @@ app.post('/create', (req, res) => {
 
 
 app.delete('/delete/:id', (req, res) => {
-    
-//secure delete 
-const sql = `
+
+    //secure delete 
+    const sql = `
 DELETE FROM trees
 WHERE id = ?
 `;
 
-con.query(sql, [req.params.id], (err) => {
-if (err) {
-    res.send('Klaida trinant duomenis');
-    return;
-}
-res.send('OK');
-});
+    con.query(sql, [req.params.id], (err) => {
+        if (err) {
+            res.send('Klaida trinant duomenis');
+            return;
+        }
+        res.send('OK');
+    });
 
 });
 
 // UPDATE table_name
 // SET column1 = value1, column2 = value2, ...
 // WHERE condition;
- 
+
 app.put('/update/:id', (req, res) => {
- 
+
     const sql = `
         UPDATE trees
         SET height = ?, name = ?
         WHERE id = ?
     `;
- 
+
     con.query(sql, [req.body.height, req.body.name, req.params.id], (err) => {
         if (err) {
             res.send('Klaida atnaujinant duomenis');
@@ -99,7 +144,7 @@ app.put('/update/:id', (req, res) => {
         }
         res.send('OK');
     });
- 
+
 });
 
 
