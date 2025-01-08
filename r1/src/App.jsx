@@ -1,22 +1,25 @@
 import './App.css';
-import { useState } from 'react';
 import './button.scss';
-import B043 from './components/B043';
-import ButtonsTest from './components/ButtonsTest';
-import C043 from './components/C043';
+import './components/044/Mygtukai';
+import Text from './components/044/Text';
+import Mygtukai from './components/044/Mygtukai';
+import Select from './components/044/Select';
+import Checkbox from './components/044/Checkbox';
+
+
 function App() {
 
-    const [size, setSize] = useState(100);
+   
 
     return (
         <div className="App">
             <header className="App-header">
-                {/* <ButtonsTest /> */}
+               
 
-                <B043 setSize={setSize} />
-                <C043 size={size} />
-
-
+               <Mygtukai />
+                <Text />
+                <Select />
+                <Checkbox />
 
 
 
@@ -26,3 +29,4 @@ function App() {
 }
 
 export default App;
+// Įdėti į App.jsx Naudojant useState, padaryti kad veiktų mygtukai.

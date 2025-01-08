@@ -42,3 +42,68 @@ body {
     transform: rotate(360deg);
   }
 }
+
+input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  outline: none;
+  background-color: transparent;
+  color: skyblue;
+}
+input.green {
+  border: 1px solid #80CFA9;
+  color: #80CFA9;
+}
+select {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  outline: none;
+  background-color: transparent;
+  color: skyblue;
+}
+
+/* Hide the checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Style the label as a toggle switch container */
+label {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Add a circular handle */
+label::before {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Change background color and position of the handle when checked */
+input[type="checkbox"]:checked + label {
+  background-color: #80CFA9;
+}
+
+input[type="checkbox"]:checked + label::before {
+  transform: translateX(30px);
+}
