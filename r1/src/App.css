@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .App {
   text-align: center;
 }
@@ -38,6 +39,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -53,10 +55,12 @@ input {
   background-color: transparent;
   color: skyblue;
 }
+
 input.green {
   border: 1px solid #80CFA9;
   color: #80CFA9;
 }
+
 select {
   padding: 10px;
   margin: 10px;
@@ -100,10 +104,32 @@ label::before {
 }
 
 /* Change background color and position of the handle when checked */
-input[type="checkbox"]:checked + label {
+input[type="checkbox"]:checked+label {
   background-color: #80CFA9;
 }
 
-input[type="checkbox"]:checked + label::before {
+input[type="checkbox"]:checked+label::before {
   transform: translateX(30px);
 }
+
+.sq-bin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.sq-bin .sq {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid white;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+}
+ 
