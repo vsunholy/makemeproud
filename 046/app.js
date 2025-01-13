@@ -113,4 +113,14 @@ const bebriniai = gyvuliai.toSorted((a, b) => b.amzius - a.amzius);
 
 console.log(bebriniai);
 
-
+const astuntasPlusiVardas = gyvuliai.toSorted((a, b) => {
+    if (a.amzius > b.amzius) {
+      return 1;
+    }
+    if (a.amzius < b.amzius) {
+      return -1;
+    }
+    return a.vardas.localeCompare(b.vardas);
+  });
+  
+  console.log(astuntasPlusiVardas);
