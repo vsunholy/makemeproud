@@ -1,27 +1,20 @@
 import './App.css';
 import './button.scss';
-// import List from './components/045/List';
-import Sq from './components/045/Sq';
-
-
+import Bin from './components/047/Bin';
 
 function App() {
 
 
+  return (
+    <div className="App">
+      <header className="App-header">
 
-    return (
-        <div className="App">
-            <header className="App-header">
-
-
-             {/* <List /> */}
-              <Sq />
+        <Bin />
 
 
-
-            </header>
-        </div>
-    );
+      </header>
+    </div>
+  );
 }
 
 export default App;
